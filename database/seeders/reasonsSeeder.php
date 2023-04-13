@@ -15,7 +15,7 @@ class reasonsSeeder extends Seeder
     public function run(): void
     {
         for ($i = 1; $i <= 10; $i++) {
-            DB::table('students')->insert([
+            DB::table('reasons')->insert([
                 'description' => Str::random(10).$i,
                 'created_at' => now(),
                 'updated_at' => now(),
