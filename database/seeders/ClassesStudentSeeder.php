@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class ClassStudentsSeeder extends Seeder
+class ClassesStudentSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -21,8 +21,8 @@ class ClassStudentsSeeder extends Seeder
 
         // create 25 new sickness_absences, idk why 25, I just wanted to try a diffrent number for relation databases
         for ($i = 1; $i <= 25; $i++) {
-            DB::table('class_students')->insert([
-                'class_id' => $classes->random()->id,
+            DB::table('classes_student')->insert([
+                'classes_id' => $classes->random()->id,
                 'student_id' => $students->random()->id,
                 'created_at' => now(),
                 'updated_at' => now(),

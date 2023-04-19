@@ -19,7 +19,7 @@ class DatabaseSeeder extends Seeder
             StudentsSeeder::class,
 
             // relation depended tables will come last
-            ClassStudentsSeeder::class,
+            ClassesStudentSeeder::class,
             SicknessAbsencesSeeder::class
         ]);
     }
