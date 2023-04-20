@@ -6,6 +6,7 @@ use App\Http\Controllers\StudentController;
 use App\Http\Controllers\ClassController;
 use App\Http\Controllers\StudentClassController;
 use App\Http\Controllers\ReasonController;
+use App\Http\Controllers\SicknessAbsenceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,20 +23,17 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-// Students
 Route::get('/students', [StudentController::class, 'index']);
 Route::post('/students', [StudentController::class, 'store']);
-
-// This will be the only time I write this, but seeing as you only influense one item I removed the s, this is purely because I like it...
-Route::get('/student/{id}', [StudentController::class, 'show']);
-Route::put('/student/{id}', [StudentController::class, 'update']);
-Route::delete('/student/{id}', [StudentController::class, 'destroy']);
+Route::get('/students/{id}', [StudentController::class, 'show']);
+Route::put('/students/{id}', [StudentController::class, 'update']);
+Route::delete('/students/{id}', [StudentController::class, 'destroy']);
 
 Route::get('/classes', [ClassController::class, 'index']);
 Route::post('/classes', [ClassController::class, 'store']);
-Route::get('/class/{id}', [ClassController::class, 'show']);
-Route::put('/class/{id}', [ClassController::class, 'update']);
-Route::delete('/class/{id}', [ClassController::class, 'destroy']);
+Route::get('/classes/{id}', [ClassController::class, 'show']);
+Route::put('/classes/{id}', [ClassController::class, 'update']);
+Route::delete('/classes/{id}', [ClassController::class, 'destroy']);
 
 Route::get('/reasons', [ReasonController::class, 'index']);
 
@@ -45,3 +43,9 @@ Route::get('/students/{student_id}/classes', [StudentClassController::class, 'ge
 Route::get('/classes/{class_id}/students', [StudentClassController::class, 'getStudentsByClass']);
 Route::post('/students/classes', [StudentClassController::class, 'assignClassToStudent']);
 Route::delete('/students/classes', [StudentClassController::class, 'removeClassFromStudent']);
+
+Route::get('/sicknessAbsences', [SicknessAbsenceController::class, 'index']);
+Route::get('/sicknessAbsences/{id}', [SicknessAbsenceController::class, 'show']);
+Route::post('/sicknessAbsences', [SicknessAbsenceController::class, 'store']);
+Route::put('/sicknessAbsences/{id}', [SicknessAbsenceController::class, 'update']);
+Route::delete('/sicknessAbsences/{id}', [SicknessAbsenceController::class, 'destroy']);

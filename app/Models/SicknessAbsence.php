@@ -5,9 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Sickness_absences extends Model
+class SicknessAbsence extends Model
 {
     use HasFactory;
+
+    
 
     public function student()
     {
